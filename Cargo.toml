@@ -1,0 +1,23 @@
+[package]
+name = "wave-sort"
+version = "0.1.0"
+edition = "2024"
+
+
+[features]
+parallel = ["dep:rayon"]
+default = ["parallel"]
+
+[dependencies]
+rayon = {version="1.8", optional = true}
+
+[dev-dependencies]
+criterion = "0.7.0"
+rand = "0.9.2"
+rand_pcg = "0.9.0"
+
+
+[[bench]]
+name = "vs_std"
+path = "benches/vs_std.rs"
+harness = false
