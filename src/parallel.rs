@@ -52,7 +52,7 @@ impl<F> ParallelWaveSorter<F> {
         self.par_upwave(slice, 0, slice.len() - 1);
     }
 
-    /// parallel or sequential execution?
+    /// Parallel or sequential execution?
     fn should_parallelize(&self, slice_len: usize) -> bool {
         slice_len >= self.threshold
     }
